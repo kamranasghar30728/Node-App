@@ -28,5 +28,5 @@ await user.populate('org')
 }
 main()
 app.listen(port,(req,res)=>{
-    console.log("Running");
+    console.log(`Running in port ${port}`);
 });
