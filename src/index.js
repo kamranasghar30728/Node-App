@@ -14,5 +14,17 @@ app.use(routes);
 app.use(login);
 app.use(organization);
 app.use(budget);
+const o=require("./models/organization")
+const User=require("./models/user")
 
+
+const main=async()=>{
+// const org=await o.findById("6241bd95dae197b0e8481d2f")
+// await org.populate("owner")
+// console.log(org.owner);
+const user = await User.findById('6241b5fd4ca9a7aabfcb9ccc')
+await user.populate('org')
+ console.log(user)
+}
+main()
 app.listen(port);
